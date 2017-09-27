@@ -14,7 +14,7 @@ def chance(percent):
 def pickOccupation(dic):
     lastKey = None
     for key in dic:
-        if((not (isinstance(dic[key], basestring))) and (dic[key] != "Total")):
+        if((not (isinstance(dic[key], basestring))) and (dic[key] != "Total" and key != "Total")):
             if(chance(dic[key])):
                 return key
         lastKey = key
