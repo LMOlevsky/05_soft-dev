@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from occ import toDictionary, pickOccupation
+from utils.occ import toDictionary, pickOccupation
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def dicToTable(dic):
 @app.route("/occupations")
 def occupations():
     occ_table = ''
-    dic = toDictionary("occupations.csv")
+    dic = toDictionary("data/occupations.csv")
     pickedOcc = "<h3>" + pickOccupation(dic) + "</h3>"
     occ_table = dicToTable(dic)
     #return render_template('tableTemp.html',table=occ_table,occupation=pickedOcc)

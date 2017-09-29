@@ -46,7 +46,3 @@ def toDictionary(file):
         else:
             dic[line[0:splitIndex]] = line[splitIndex + 1 : lineEnd]
     return dic
-dic = toDictionary("occupations.csv")
-print dic
-print "--------------------------------------------"
-print pickOccupation(dic)
